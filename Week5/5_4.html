@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            text-align: center;
+        }
+        th {
+            width: 120px;
+            background-color: skyblue;
+        }
+        .da {
+            background-color: lime;
+        }
+        .mp {
+            background-color: pink;
+        }
+        .ca {
+            background-color: aqua;
+        }
+        .web {
+            background-color: fuchsia;
+        }
+        .mi {
+            background-color: green;
+        }
+    </style>
+    <title>🚀 표에 스타일시트 적용하기</title>
+</head>
+<body>
+    <table border="1">
+        <caption><h2>시간표</h2></caption>
+        <thead>
+            <tr>
+                <th>교시</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td class="da" rowspan="3">자료구조와알고리즘</td>
+                <td></td>
+                <td class="mp" rowspan="3">모바일프로그래밍</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td class="ca" rowspan="2">컴퓨터응용</td>
+                <td class="web" rowspan="2">웹프로그래밍</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td colspan="5">점심시간</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="mi" rowspan="2">멀티미디어 개론</td>
+                <td class="mp" rowspan="3">모바일프로그래밍</td>
+                <td></td>
+                <td></td>
+                <td class="ca" rowspan="2">컴퓨터응용</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
