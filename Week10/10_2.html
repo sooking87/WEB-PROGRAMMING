@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 witch문으로 한영 번역하기</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        var day = prompt("요일을 입력해주세요.");
+        var printDay = "";
+
+        switch(day) {
+            case "월요일":
+                printDay = "Monday";
+                break;
+            case "화요일":
+                printDay = "Tuesday";
+                break;
+            case "수요일":
+                printDay = "Wednesday";
+                break;
+            case "목요일":
+                printDay = "Thursday";
+                break;
+            case "금요일":
+                printDay = "Friday";
+                break;
+            case "토요일":
+                printDay = "Saturday";
+                break;
+            case "일요일":
+                printDay = "Sunday";
+                break;
+            default:
+                alert("해당하는 요일이 존재하지 않습니다.");
+                break;
+        }
+        document.write(printDay);
+        
+    </script>
+</body>
+</html>

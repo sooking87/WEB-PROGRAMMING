@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>DOM</title>
+  
+</head>
+<body>
+    <input id="dept" type="text" name="department" value="computer science">
+
+  <script type="text/javascript"> 
+      var dom = document.getElementById("dept");
+      var msg = dom.name + "을 입력해주세요."
+      var newValue = prompt(msg);
+      dom.value = newValue;
+  </script>
+</body>
+</html>

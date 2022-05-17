@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 생성자 함수</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function display_list() {
+            document.write(this.name + ": " + this.avg);
+        }
+
+        function Student(name, midScore, finalScore, avg) {
+            this.name = name;
+            this.midScore = midScore;
+            this.finalScore = finalScore;
+            this.avg = (midScore + finalScore) / 2;
+            this.display = display_list;
+        }
+        var cat = new Student("cat", 90, 90);
+        cat.display();
+
+    </script>
+</body>
+</html>

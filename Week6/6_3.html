@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 설문조사 폼 양식 작성하기</title>
+</head>
+<body>
+    <h1>설문조사</h1>
+    <form method="post" action="">
+        <fieldset>
+            <legend>기본정보</legend>
+            이름 : <input type="text" name="userName"> <br>
+            나이 : <input type="number" min="0"> <br>
+            성별 :
+                <input type="radio" name="sex" id="male" value="male">
+                <label for="male">남자</label>
+                <input type="radio" name="sex" id="female" value="female">
+                <label for="female">여자</label>
+        </fieldset>
+        <fieldset>
+            <legend>관심분야(1개이상)</legend>
+            <input type="checkbox" name="Interests" value="digitalContent"> 디지털 콘텐츠
+            <input type="checkbox" name="Interests" value="webProgramming"> 웹프로그래밍
+            <input type="checkbox" name="Interests" value="dataBase"> 데이터베이스
+            <input type="checkbox" name="Interests" value="machineLearn"> 기계학습
+        </fieldset>
+        <fieldset>
+            <legend>다음 문항에 대해 5점 척도로 답하세요</legend>
+            본 세미나의 주제는 만족스러운가? 1 <input type="range" min="1" max="5" value=3/> 5 <br>
+            본 세미나의 초청강사는 만족스러운가? 1<input type="range" min="1" max="5" value="3"/>5 <br>
+            본 세미나의 강의시간은 적당한가?  1 <input type="range" min="1" max="5" value="3"/>5 <br>
+        </fieldset>
+        <div>
+            <br>
+            <div>기타 의견 사항</div>
+            <textarea name="opinion" cols="80" rows="10">의견을 적으세요</textarea>
+        </div>
+        <div>
+            <br>
+            <input type="submit" value="확인"/>
+            <input type="reset" value="취소"/>
+        </div>
+    </form>
+</body>
+</html>

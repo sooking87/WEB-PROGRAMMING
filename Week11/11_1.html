@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀오늘의 날짜와 요일 출력</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var today = new Date();
+        var y = today.getFullYear();
+        var m = today.getMonth() + 1;
+        var d = today.getDate();
+        var dayOfWeek = today.getDay();
+        
+        var printDayOfWeek;
+        switch(dayOfWeek) {
+            case 1: 
+                printDayOfWeek = "월요일";
+                break;
+            case 2:
+                printDayOfWeek = "화요일";
+                break;
+            case 3:
+                printDayOfWeek = "수요일";
+                break;
+            case 4:
+                printDayOfWeek = "목요일";
+                break;
+            case 5:
+                printDayOfWeek = "금요일";
+                break;
+            case 6:
+                printDayOfWeek = "토요일";
+                break;
+            case 0:
+                printDayOfWeek = "일요일";
+                break;
+
+        }
+        document.write("오늘은 " + y + "년 " +m + "월 " + d + "일 " + printDayOfWeek + "입니다.");
+    </script>
+</body>
+</html>

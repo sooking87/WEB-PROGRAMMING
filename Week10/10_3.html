@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 반복문 사용하기</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var sum = 0;
+        var evenSum = 0;
+        var j = 0;
+
+        for (var i = 0; i <= 1000; i++) {
+            sum += i;
+        }
+
+        while (j <= 1000) {
+            if (j % 2 === 0) {
+                evenSum += j;
+            }
+            j++;
+        }
+
+        document.write("0부터 1000까지의 합 : " + sum + "<br>");
+        document.write("0부터 1000까지의 짝수의 합 : " + evenSum + "<br>");
+    </script>
+</body>
+</html>

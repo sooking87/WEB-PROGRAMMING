@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 사칙연산 결과표</title>
+    
+</head>
+<body>
+
+    <script type="text/javascript">
+        var num1 = parseInt(prompt("숫자 1을 입력해주세요."));
+        var num2 = parseInt(prompt("숫자 2를 입력해주세요."));
+        var add = num1 + num2;
+        var sub = num1 - num2;
+        var mul = num1 * num2;
+        var div = num1 / num2;
+
+        document.write("<table border='1'>")
+        document.write("<caption>사칙연산 결과표</caption>")
+
+        document.write("<tr>")
+        document.write("<th>숫자</th>")
+        document.write("<th>" + num1 + "</th>")
+        document.write("<th>" + num2 + "</th>")
+        document.write("</tr>")
+
+        document.write("<tr>")
+        document.write("<td> 더하기 </td>")
+        document.write("<td colspan=2>" + add + "</td>")
+        document.write("</tr>")
+
+        document.write("<tr>")
+        document.write("<td> 빼기 </td>")
+        document.write("<td colspan=2>" + sub + "</td>")
+        document.write("</tr>")
+
+        document.write("<tr>")
+        document.write("<td> 곱하기 </td>")
+        document.write("<td colspan=2>" + mul + "</td>")
+        document.write("</tr>")
+
+        document.write("<tr>")
+        document.write("<td> 나누기 </td>")
+        document.write("<td colspan=2>" + div + "</td>")
+        document.write("</tr>")
+        document.write("</table>")
+    </script>    
+</body>
+</html>

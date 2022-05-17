@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 레스토랑 예약하기</title>
+</head>
+<body>
+    <h1>레스토랑 예약하기</h1>
+    <form method="post" action="">
+        <fieldset>
+            <legend>예약자 정보</legend>
+            예약자 : <input type="text" name="userName" required> <br>
+            연락처 : <input type="tel" pattern="[0-9]{3}-[0, 9]{4}-[0]9]{4}" placeholder="000-0000-0000"> <br>
+            예약인원 : 
+            <select name="num" size="1">
+                <option value="two" selected>2명</option>
+                <option value="three">3명</option>
+                <option value="four">4명</option>
+                <option value="fiveOver">5명이상</option>
+            </select>   
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>예약 시간 선택</legend>
+            <input type="date"/> <input type="time">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>메뉴 선택</legend>
+            <input type="radio" id="courseA" name="course" value="course">
+            <label for="courseA">코스 A</label>
+            <input type="radio" id="courseB" name="course" value="course">
+            <label for="courseB">코스 B</label>
+            <input type="radio" id="courseC" name="course" value=course">
+            <label for="courseC">코스 C</label>
+            <input type="radio" id="courseD" name="course" value="course"> 
+            <label for="courseD">코스 D</label> <br>
+
+            <div>요청사항:</div>
+            <textarea name="request" cols="90" rows="5"></textarea>
+        </fieldset>
+        <div>
+            <br>
+            <input type="submit" value="예약">
+            <input type="reset" value="취소">
+        </div>
+    </form>
+</body>
+</html>

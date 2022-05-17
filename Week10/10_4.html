@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 BMI 계산하는 함수 정의하기</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var height = parseInt(prompt("키(cm)를 입력해주세요.")) * 0.01;
+        var weight = parseInt(prompt("몸무게(kg)를 입력해주세요."));
+        var BMI = weight / (height * height);
+
+        if (BMI >= 30) {
+            document.write("당신은 현재 [비만] 상태 입니다. 운동하세요!");
+        }
+        else if (25 <= BMI && BMI < 30) {
+            document.write("당신은 현재 [과체중] 상태 입니다. 조심하세요!");
+        }
+        else if (18.5 <= BMI && BMI < 25) {
+            document.write("당신은 [정상] 입니다^^");
+        }
+        else {
+            document.write("당신은 현재 [저체중] 상태 입니다. 많이 드세요!");
+        }
+
+    </script>
+</body>
+</html>
