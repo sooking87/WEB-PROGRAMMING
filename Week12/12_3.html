@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고양이 카페 사이트 만들기</title>
+
+    <script type="text/javascript">
+        function setName(id) {
+            var dom = document.getElementById(id + "Name");
+            var catName = prompt("고양이의 이름을 지어주세요.");
+            var nodeName = document.createTextNode(catName);
+            const nameDiv = document.createElement('div');
+            nameDiv.appendChild(nodeName);
+            nameDiv.style = "text-align: center;" 
+            dom.appendChild(nameDiv);
+        }
+    </script>
+    
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td><img src="../images/cat1.png" width="200" id="cat1" onclick="setName('cat1')"/><div id="cat1Name"></div></td>
+            <td><img src="../images/cat2.png" width="200" id="cat2" onclick="setName('cat2')"/><div id="cat2Name"></div></td>
+            <td><img src="../images/cat3.png" width="200" id="cat3" onclick="setName('cat3')"/><div id="cat3Name"></div></td>
+            <td><img src="../images/cat4.png" width="200" id="cat4" onclick="setName('cat4')"/><div id="cat4Name"></div></td>
+        </tr>
+        <tr>
+            <td><img src="../images/cat5.png" width="200" id="cat5" onclick="setName('cat5')"/><div id="cat5Name"></div></td>
+            <td><img src="../images/cat6.png" width="200" id="cat6" onclick="setName('cat6')"/><div id="cat6Name"></div></td>
+            <td><img src="../images/cat7.png" width="200" id="cat7" onclick="setName('cat7')"/><div id="cat7Name"></div></td>
+            <td><img src="../images/cat8.png" width="200" id="cat8" onclick="setName('cat8')"/><div id="cat8Name"></div></td>
+        </tr>
+        <tr></tr>
+    </table>
+</body>
+</html>

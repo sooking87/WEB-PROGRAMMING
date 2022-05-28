@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고양이 카페 만들기</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Name(id_img, id_div){
+            var catSelected = document.getElementById(id);
+            console.log(catSelected);
+            var newName = prompt("put his/her name.","");
+            
+            var newText = document.createTextNode(newName);
+            var newDiv = document.createElement('div');
+            
+            var src = document.getElementById(id_div);
+            newDiv.appendChild(newText);
+            id_div.appendChild(newDiv);
+        }
+    </script>
+
+    <h2><center>Welcome!</center></h2>
+    <h3><center>This is the cafe for loving cats <br>
+    please name them</center></h3>
+
+    <center>
+        <table border="1">
+            <caption>Lovely Cats</caption>
+            <tr>
+                <td><div id="div1"><img id="image0" src="../images/cat1.png" onclick="Name('image0','div1');" alt="Unable to load Image" width="300px" height="300px"></div> </td>
+                <td><div id="div2"><img id="image1" src="../images/cat1.png" onclick="Name('image1','div2');" alt="Unable to load Image" width="300px" height="300px"></div> </td>
+                <td><div id="div3"><img id="image2" src="../images/cat1.png" onclick="Name('image2','div3');" alt="Unable to load Image" width="300px" height="300px"></div> </td>
+            </tr>
+            <tr>
+                <td><div id="div4"><img id="image3" src="../images/cat1.png" onclick="Name('image3','div4');" alt="Unable to load Image" width="300px" height="300px"></div> </td>
+                <td><div id="div5"><img id="image4" src="../images/cat1.png" onclick="Name('image4','div5');" alt="Unable to load Image" width="300px" height="300px"></div></td>
+                <td><div id="div6"><img id="image5" src="../images/cat1.png" onclick="Name('image5','div6');" alt="Unable to load Image" width="300px" height="300px"></div> </td>
+            </tr>
+        </table>
+
+    </center>
+
+</body>
+</html>

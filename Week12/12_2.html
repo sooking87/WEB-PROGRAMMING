@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 만들기</title>
+    <script type="text/javascript">
+        function Calc() {
+            var op1 = document.getElementById("op1").value;
+            op1 = parseInt(op1);
+            var op2 = document.getElementById("op2").value;
+            op2 = parseInt(op2);
+            var operator = document.getElementById("operator");
+            var outputOp = operator[operator.selectedIndex].value;
+            if (outputOp === "add") {
+                document.getElementById("result").value = op1 + op2;
+            }
+            else if (outputOp === "sub") {
+                document.getElementById("result").value = op1 - op2;
+            }
+            else if (outputOp === "mul") {
+                document.getElementById("result").value = op1 * op2;
+            }
+            else {
+                document.getElementById("result").value = op1 / op2;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input id="op1" type="text" size="2" />
+    <select name="operator" id="operator">
+        <option value="add" id="add" selected> + </option>
+        <option value="sub" > - </option>
+        <option value="mul" > * </option>
+        <option value="div" > / </option>
+    </select>
+    <input id="op2" type="text" size="2" />
+    <input type="button" value="=" onClick="Calc()">
+    <input type="text" id="result" size="2" />
+</body>
+</html>
