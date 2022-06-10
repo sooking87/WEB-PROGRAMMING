@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!--temp-->
+    <section id="ex9">
+        <style>
+            #ex9 .upload-box{
+                width:500px;
+                height: 300px;
+                border:1px solid gray;
+                box-shadow: 2px 3px 9px hsl(0, 0%, 47%);
+                padding:10px;
+            }
+        </style>
+        <h1>파일업로드 : DND & Trigger</h1>
+        <div class="upload-box">
+            <button class="btn-upload">파일선택</button>
+            <input class="btn-file d-none" type="file"> <!--파일 input box 형태-->     
+        </div>
+    </section>
+
+    <script>
+        var sec9 = document.querySelector("#ex9");
+        var btnUpload = sec9.querySelector(".btn-upload");
+        var inputFile = sec9.querySelector('input[type="file"]');
+        var uploadBox = sec9.querySelector(".upload-box");
+
+        uploadBox.ondragenter = function(e) {
+            dropId = e.target.id;
+        }
+
+        uploadBox.ondragover = function(e) {
+            e.preventDefault();
+        }
+
+        uploadBox.ondrop = function(e) {
+            var data = e.dataTransfer.getData("text");
+            e.target.appendChild(document.getElementById(data));
+        }
+        
+        
+
+    </script>
+</body>
+</html>

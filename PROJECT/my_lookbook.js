@@ -18,3 +18,5 @@ function addBrand() {
     document.getElementById("brand_name").value = "";
   }
 }
+
+// drap & drop
