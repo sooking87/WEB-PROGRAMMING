@@ -8,7 +8,7 @@ body {
     color: white;
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
-a:hover {
+.navbar_bg a:hover {
     font-weight: bolder;
     text-decoration: 2px double underline green;
 }
@@ -58,6 +58,18 @@ h2 {
     display: flex;
     justify-content: center;
 }
+.sidebar {
+    display: grid;
+    margin-right: 20px;
+}
+.sidebar a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+    margin: 10px;
+}
 .content {
     display: flex;
     justify-content: space-evenly;
@@ -76,14 +88,21 @@ h2 {
 /* clothes & ACC */
 
 /* list */
-
+.my_best_brand {
+    margin-left: 20px;
+}
 #brand_list {
     list-style: none;
-    padding: 0;
+    padding: 0px 10px;
     margin: 0;
 }
 #brand_list li {
-    margin: 15px 0px;
+    margin: 15px 10px;
+    text-align: center;
+}
+#brand_name {
+    margin-left: 20px;
+    justify-content: center;
 }
 
 /* temp */
@@ -96,11 +115,18 @@ h2 {
     .navbar_menu {
         font-size: 20px;
     }
+    .main {
+        display: grid;
+    }
     .content {
         width: 800px;
+        border: none;
     }
     .drop_zone {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .sidebar {
+        display: none;
     }
 
 }

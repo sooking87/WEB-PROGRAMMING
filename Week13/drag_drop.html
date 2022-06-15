@@ -9,41 +9,68 @@
 </head>
 <body>
     <!--temp-->
-    <section id="ex9">
-        <style>
-            #ex9 .upload-box{
-                width:500px;
-                height: 300px;
-                border:1px solid gray;
-                box-shadow: 2px 3px 9px hsl(0, 0%, 47%);
-                padding:10px;
-            }
-        </style>
-        <h1>파일업로드 : DND & Trigger</h1>
-        <div class="upload-box">
-            <button class="btn-upload">파일선택</button>
-            <input class="btn-file d-none" type="file"> <!--파일 input box 형태-->     
-        </div>
-    </section>
+    <<tr>
+    <td>첨부파일</td>
+    <td>
+        <section id="upload-section" style="width:100%; height:100%;">
+            <div class="upload-box" style="width:100%; height:100%; display:table;">
+                <button class="btn-upload" style="display:none;">파일선택</button>
+                <input class="btn-file d-none" type="file" style="display:none;" id="testFile"/>
+								
+                <span id="testFileNm" style="font-size:20px; display:table-cell; vertical-align:middle;">
+                    Drag&Drop
+                </span>
+            </div>
+        </section>
+    </td>
+</tr>
+<script>
+    $(document).ready(function(){
+    init();
+});
 
-    <script>
-        var sec9 = document.querySelector("#ex9");
-        var btnUpload = sec9.querySelector(".btn-upload");
-        var inputFile = sec9.querySelector('input[type="file"]');
-        var uploadBox = sec9.querySelector(".upload-box");
-
-        uploadBox.ondragenter = function(e) {
-            dropId = e.target.id;
-        }
-
-        uploadBox.ondragover = function(e) {
-            e.preventDefault();
-        }
-
-        uploadBox.ondrop = function(e) {
-            var data = e.dataTransfer.getData("text");
-            e.target.appendChild(document.getElementById(data));
-        }
-    </script>
+//파일 Drag&Drop 업로드(초기화 시 EventListener를 부여하는 방식)
+const init = () => {
+    const sec = document.querySelector('#upload-section');
+    const btnUpload = sec.querySelector('.btn-upload');
+    const inputFile = sec.querySelector('input[type="file"]');
+    const uploadBox = sec.querySelector('.upload-box');
+	
+    //Chrome의 경우 DragOver한 파일을 Drop시 해당 파일 내용을 브라우저에 띄워주기 때문에
+    //dragover와 drop 이벤트의 기본 기능을 preventDefault를 이용해 막아준다.
+    
+    uploadBox.addEventListener('dragover', function(e) {
+        e.preventDefault();
+    });
+	
+    uploadBox.addEventListener('drop', function(e){
+        e.preventDefault();
+		
+        //DataTransfer로 받아올 수 있음
+        const data = e.dataTransfer;
+        //유효성 검사
+        if(!isValid(data)) return;
+		
+        //파일이 있는 경우 text 교체
+        $('#testFileNm').text(data.files[0] != null ? data.files[0].name : 'Drag&Drop');
+        //* Drag&Drop 된 파일을 input file의 내용으로 교체
+        $('#testFile')[0].files = data.files;
+    });
+}
+	
+//유효성 검사(필요한 부분만 가져와 사용하였음)
+const isValid = (data) => {
+		
+    //파일 유효 검사
+    if(data.types.indexOf('Files') < 0) return false;
+    //파일 개수 검사(여러 개의 파일을 선택 후, Drag&Drop 하는 것을 방지)
+    if(data.files.length > 1) {
+        alert('파일은 하나씩 전송이 가능합니다.');
+        return false;
+    }
+    return true;
+    
+}
+</script>
 </body>
 </html>

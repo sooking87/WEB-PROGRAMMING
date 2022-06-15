@@ -7,7 +7,7 @@
 .male, .female {
     width: 600px;
     margin: 10px;
-    border: 10px outset gray;
+    border: 6px outset gray;
 }
 .line {
     border-right: 2px dotted gray;
