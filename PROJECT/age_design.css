@@ -1,0 +1,14 @@
+/* article */
+.content {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.male, .female {
+    width: 600px;
+    margin: 10px;
+    border: 10px outset gray;
+}
+.line {
+    border-right: 2px dotted gray;
+}
