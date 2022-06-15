@@ -65,7 +65,7 @@ h2 {
     border-right: 2px double gray;
     border-left: 2px double gray;
 }
-.images {
+.drop_zone {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 20px;
@@ -86,6 +86,8 @@ h2 {
     margin: 15px 0px;
 }
 
+/* temp */
+
 
 @media screen and (max-width: 1200px) {
     .navbar_title {
@@ -97,7 +99,7 @@ h2 {
     .content {
         width: 800px;
     }
-    .images {
+    .drop_zone {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
