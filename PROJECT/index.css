@@ -7,6 +7,7 @@ body {
     text-decoration: none;
     color: white;
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    transition: 0.3s;
 }
 a:hover {
     font-weight: bolder;
@@ -19,19 +20,17 @@ a:hover {
     height: 300px;
     margin: 0px;
     padding: 0px;
-
+    transition: 0.3s;
 }
 .header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;  
-    transition: 1s;
     font-weight: bolder;
 }
 .navbar_title {
     font-size: 30px;
     font-style: italic;
-    padding: 5px 100px;
     padding: 0;
     margin: 0;
 }
@@ -102,6 +101,7 @@ a:hover {
 .image {
     margin-left: 20px;
 }
+
 .text span {
     font-size: 17px;
     font-weight: bold;
@@ -113,15 +113,19 @@ a:hover {
 @media screen and (max-width: 1200px) {
     .navbar_title {
         font-size: 23px;
+        transition: 0.3s;
     }
     .navbar_menu {
         font-size: 20px;
+        transition: 0.3s;
     }
     .design_dif {
         width: 100%;
+        transition: 0.3s;
     }
     .content_each {
         width: 800px;
+        transition: 0.3s;
     }
 
 }
