@@ -30,58 +30,28 @@
     </nav>
 
     <article class="main">
-    <aside>
-        <div class="sidebar">
-            <h2>Category</h2>
-            <a href="#top">Top</a>
-            <a href="#bottom">Bottom</a>
-            <a href="#acc">Acc</a>
-        </div>
-        
-    </aside>
-    <div class="content">
-        <div class="clothes">
-            <div class="top">
-                <h2 id="top">TOP</h2>
-                <label class="label" id="label" for="input">
-                    <input type="file">
-                    <div class="inner" id="inner">드래그하거나 클릭해서 업로드
-                    <input id="input" class="input" accept="image/*" type="file" required="true" multiple="true" hidden="true">
-                    <div class="preview" id="preview"></div>
-                    </div>
-                </label>
-                
-            </div>
-            <div class="bottom">
-                <h2 id="bottom">BOTTOM</h2>
-                <ol class="drop_zone">
-                    <img src="../images/cat1.png" width="200px">
-                    <img src="../images/cat2.png" width="200px">
-                    <img src="../images/cat2.png" width="200px">
-                    <img src="../images/cat2.png" width="200px">
-                    <img src="../images/cat3.png" width="200px">
-                    <img src="../images/cat4.png" width="200px">
-                </ol>
-            </div>
-            <div class="acc">
-                <h2 id="acc">ACC</h2>
-                <ol class="drop_zone">
-                    <img src="../images/cat1.png" width="200px">
-                    <img src="../images/cat2.png" width="200px">
-                    <img src="../images/cat2.png" width="200px">
-                    <img src="../images/cat2.png" width="200px">
-                    <img src="../images/cat3.png" width="200px">
-                    <img src="../images/cat4.png" width="200px">
-                </ol>
+    <section>
+        <div class="content">
+            <div class="clothes">
+                <div class="input_clothes">
+                    <h2>My Clothes</h2>
+                    <label class="label" id="label" for="input">
+                        <div class="inner" id="inner">Click HERE
+                            <div class="preview" id="preview">
+                                <input id="input" class="input" accept="image/*" type="file" required="true" multiple="true" hidden="true">
+                            </div>
+                        </div>
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     <aside>
         <div class="my_best_brand">
             <h2>My Favorite Brand</h2>
             <ul id="brand_list" ></ul>
             <div class="brand">
-                <input type="text"  id="brand_name" placeholder="After input Press Enter" onkeydown="addBrand()">
+                <input type="text"  id="brand_name" placeholder="After input Press Enter" size="30" onkeydown="addBrand()">
             </div>
         </div>
     </aside>
@@ -89,5 +59,3 @@
     
 </body>
 </html>
-
-<!--버튼 이미지 https://w7.pngwing.com/pngs/972/334/png-transparent-computer-icons-add-logo-desktop-wallpaper-add-thumbnail.png-->

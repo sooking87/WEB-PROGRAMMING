@@ -1,10 +1,10 @@
-function show(id) {
-  var title = document.getElementById(id).id;
-  console.log(title);
-  clickEventHandle(document.getElementById(id));
-}
+//sticky element selector에 sticky 속성을 사용하고자하는 엘리먼트의 selector 설정
+let parent = document.querySelector(".sticky").parentElement;
 
-function clickEventHandle(event) {
-  var target = event.target;
-  console.log(target);
+while (parent) {
+  const hasOverflow = getComputedStyle(parent).overflow;
+  if (hasOverflow !== "visible") {
+    console.log(hasOverflow, parent);
+  }
+  parent = parent.parentElement;
 }

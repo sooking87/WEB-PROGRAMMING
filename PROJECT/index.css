@@ -56,17 +56,14 @@ a:hover {
     margin: 20px 0px;
 }
 .design_dif {
-    background-attachment: scroll;
     width: 1200px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
-.select {
-
-    background-attachment: scroll;
+    background: yellowgreen;
 }
 .select a {
+    
     font-style: italic;
     font-weight: bold;
     text-decoration: none;

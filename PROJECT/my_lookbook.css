@@ -25,17 +25,29 @@ h2 {
     justify-content: space-evenly;
     align-items: center;
     border-right: 2px double gray;
-    border-left: 2px double gray;
 }
-.drop_zone {
+/* add image */
+.inner:hover{
+    background-color: #64AD69;
+    border-radius: 15px;
+}
+.input_clothes {
+    padding: 0px 30px;
+}
+.preview {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 20px;
-    column-gap: 70px;
-    padding: 0px;
-    margin: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
 }
-/* clothes & ACC */
+.embed-img{
+    width: 250px;
+    height: auto;
+    object-position: center;
+    border-radius: 8px;
+    transition: 0.5s;
+}
 
 /* list */
 .my_best_brand {
@@ -50,39 +62,7 @@ h2 {
     margin: 15px 10px;
     text-align: center;
 }
-#brand_name {
-    margin-left: 20px;
-    justify-content: center;
-}
 
-/* drag & drop */
-.label--hover{
-    background-color: var(--hoverBg);
-}
-.preview {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    align-items: center;
-    background-color: var(--bgColor);
-}
-
-.embed-img{
-    width: 200px;
-    height: auto;
-    object-position: center;
-}
-
-
-@media (any-hover: hover){
-    .inner:hover{
-        background-color: var(--hoverBg);
-    }
-}
-  
 @media screen and (max-width: 1200px) {
     .main {
         display: grid;
@@ -91,14 +71,18 @@ h2 {
         width: 800px;
         border: none;
     }
-    .drop_zone {
-        grid-template-columns: 1fr 1fr 1fr;
+    .embed-img {
+        width: 200px;
+        transition: 0.5s;
     }
     .sidebar {
         display: none;
     }
     .my_best_brand h2 {
         justify-items: right;
+    }
+    .brand {
+        padding-left: 270px;
     }
 
 }

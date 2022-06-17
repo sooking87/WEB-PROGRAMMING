@@ -19,109 +19,61 @@ function addBrand() {
   }
 }
 
-// drap & drop
+// 동적 웹페이지 만들기
+
 var input = document.getElementById("input");
 var input_img = document.getElementById("label");
+// 이벤트가 발생하면 발생한 이벤트 객체를 리스트(changeEvent)로 바꾸어서 handleUpdate에 전달.
 
 input.addEventListener("change", (event) => {
   const files = changeEvent(event);
   handleUpdate(files);
 });
 
-input_img.addEventListener("mouseover", (event) => {
-  event.preventDefault();
-  const label = document.getElementById("label");
-  label?.classList.add("label--hover");
-});
-
-input_img.addEventListener("mouseout", (event) => {
-  event.preventDefault();
-  const label = document.getElementById("label");
-  label?.classList.remove("label--hover");
-});
-
-document.addEventListener("dragenter", (event) => {
-  event.preventDefault();
-  console.log("dragenter");
-  if (event.target.className === "inner") {
-    event.target.style.background = "#616161";
-  }
-});
-
-document.addEventListener("dragover", (event) => {
-  console.log("dragover");
-  event.preventDefault();
-});
-
-document.addEventListener("dragleave", (event) => {
-  event.preventDefault();
-  console.log("dragleave");
-  if (event.target.className === "inner") {
-    event.target.style.background = "#3a3a3a";
-  }
-});
-
-document.addEventListener("drop", (event) => {
-  event.preventDefault();
-  console.log("drop");
-  if (event.target.className === "inner") {
-    const files = event.dataTransfer?.files;
-    event.target.style.background = "#3a3a3a";
-    handleUpdate([...files]);
-  }
-});
-
+// 발생한 이벤트 객체를 리스트(changeEvent)로 바꾸어줌
 function changeEvent(event) {
   const { target } = event;
   return [...target.files];
 }
 
+// 이미지 파일을 업데이트 해주는 메소드
 function handleUpdate(fileList) {
   const preview = document.getElementById("preview");
 
+  // 한번에 여러개 파일 열기가 가능하도록 하기위해서 forEach 사용
   fileList.forEach((file) => {
     const reader = new FileReader();
+    // 이미지 파일 경로를 구해서(load 이벤트), div 태그에 넣어주는 메소드
     reader.addEventListener("load", (event) => {
+      // 이미지 노드(img 태그) 하나 완성
       const img = el("img", {
         className: "embed-img",
-        src: event.target?.result,
+        src: event.target.result,
       });
-      const imgContainer = el("div", { className: "container-img" }, img);
+      const imgContainer = el("div", { className: "container-img" }, img); // img 태그를 다시 div 태그로 감싼다.
       preview.append(imgContainer);
     });
     reader.readAsDataURL(file);
   });
 }
 
+// 폴더에서 선택된 이미지를 div 태그에 넣어주는 메소드
 function el(nodeName, attributes, ...children) {
-  const node =
-    nodeName === "fragment"
-      ? document.createDocumentFragment()
-      : document.createElement(nodeName);
+  const node = document.createElement(nodeName);
 
   Object.entries(attributes).forEach(([key, value]) => {
-    if (key === "events") {
-      Object.entries(value).forEach(([type, listener]) => {
-        node.addEventListener(type, listener);
-      });
-    } else if (key in node) {
+    if (key in node) {
+      // 사진 노드 추가
       try {
         node[key] = value;
       } catch (err) {
         node.setAttribute(key, value);
       }
-    } else {
-      node.setAttribute(key, value);
     }
   });
 
   children.forEach((childNode) => {
-    if (typeof childNode === "string") {
-      node.appendChild(document.createTextNode(childNode));
-    } else {
-      node.appendChild(childNode);
-    }
+    node.appendChild(childNode);
   });
-
   return node;
 }
